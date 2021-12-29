@@ -1,4 +1,5 @@
-CREATE DATABASE ims;
+DROP DATABASE IF EXISTS `ims`;
+CREATE DATABASE `ims`;
 
 
 CREATE TABLE `user` (
@@ -47,13 +48,13 @@ INSERT INTO `customer` (`customer_name`, `customer_address`, `customer_number`) 
 ('Virendra Singh', 'Pune', '7865465642');
 
 
-+-------------+----------------+------------------+-----------------+
-| customer_id | customer_name  | customer_address | customer_number |
-+-------------+----------------+------------------+-----------------+
-|           1 | Ramesh Jha     | Baramati         | 9867451325      |
-|           2 | Sarang Sharma  | Satara           | 7846598975      |
-|           3 | Virendra Singh | Pune             | 7865465642      |
-+-------------+----------------+------------------+-----------------+
+-- +-------------+----------------+------------------+-----------------+
+-- | customer_id | customer_name  | customer_address | customer_number |
+-- +-------------+----------------+------------------+-----------------+
+-- |           1 | Ramesh Jha     | Baramati         | 9867451325      |
+-- |           2 | Sarang Sharma  | Satara           | 7846598975      |
+-- |           3 | Virendra Singh | Pune             | 7865465642      |
+-- +-------------+----------------+------------------+-----------------+
 
 
 CREATE TABLE `product` (
@@ -71,13 +72,13 @@ INSERT INTO `product` (`product_name`, `product_unit_price`) VALUES
 ('Reebok Running Zig', '6599');
 
 
-+------------+--------------------+--------------------+
-| product_id | product_name       | product_unit_price |
-+------------+--------------------+--------------------+
-|          1 | Nike Airmax Shoe   |               9999 |
-|          2 | Adidas Yeezy       |               8999 |
-|          3 | Reebok Running Zig |               6599 |
-+------------+--------------------+--------------------+
+-- +------------+--------------------+--------------------+
+-- | product_id | product_name       | product_unit_price |
+-- +------------+--------------------+--------------------+
+-- |          1 | Nike Airmax Shoe   |               9999 |
+-- |          2 | Adidas Yeezy       |               8999 |
+-- |          3 | Reebok Running Zig |               6599 |
+-- +------------+--------------------+--------------------+
 
 
 CREATE TABLE `order` (
@@ -101,4 +102,4 @@ INSERT INTO `order` (`customer_id`, `product_id`, `quantity`, `amount`) VALUES
 INSERT INTO `order` (`customer_id`, `product_id`, `quantity`, `amount`) VALUES 
 (3, 2, 1, 8999);
 
-SELECT `order_id`, `customer_name`, `amount`, DATE_FORMAT(`order_date`,'%y-%m-%d %h:%m') as `order_date`, `order_date` as 'date' FROM `order` JOIN `customer` ON `customer`.`customer_id`=`order`.`customer_id` ORDER BY 'date';
+-- SELECT `order_id`, `customer_name`, `amount`, DATE_FORMAT(`order_date`,'%y-%m-%d %h:%m') as `order_date`, `order_date` as 'date' FROM `order` JOIN `customer` ON `customer`.`customer_id`=`order`.`customer_id` ORDER BY 'date';
